@@ -1,4 +1,4 @@
-# Music Venue Web App
+## Music Venue Web App
 
 This is a web application for a music venue that showcases a calendar of upcoming events. Built using a LEMP stack (Linux, Nginx, MySQL, PHP) for the backend, and HTML, CSS, and JavaScript for the frontend, the app provides an interface for users to stay updated on live performances.
 
