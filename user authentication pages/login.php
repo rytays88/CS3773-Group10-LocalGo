@@ -1,9 +1,24 @@
 <?php
 session_start();
-include("functions.php");                 // functions for DB connection
+//include("functions.php");                 // functions for DB connection
+
+if(isset($_SESSION['registration_success'])) {
+    $successMessage = $_SESSION['registration_success'];
+    unset($_SESSION['registration_success']);   // clear message after display
+}
+
+if(isset($dbConnectionError)) {
+    echo "<div class = 'alert alert-danger mt-3'>$dbConnectionError</div>";
+    exit();     // prevent further code xecutuion if DB connection failed
+}
+
+if( isset( $_SESSION['user_id'] ) ) {
+    header("Location: sampleindex.php");
+    exit();
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username'];
+    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
     $password = $_POST['password'];
 
     // check if username exists prior
@@ -12,13 +27,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $stmt->fetch();
 
     if( $user && password_verify($password, $user['password'] )) {
+        // regenerate session ID to prevent session fixation
+        //session_regenerate_id(true);
+        
         // pass is correct, set session and redirect to dashboard
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
 
         // added remember me functionality 
         if( isset($_POST['rememberMe']) ) {
-            setcookie("username", $username, time() + (86400 * 30), "/");   //set cookie that lasts for 30 days
+            setcookie("username", $username, time() + (86400 * 30), "/", "", true, true);   //set cookie that lasts for 30 days
         }
         header("Location: sampleindex.php");
         exit();

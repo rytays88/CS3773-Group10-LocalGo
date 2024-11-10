@@ -1,0 +1,127 @@
+/* sample styles.css file */
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding-top: 20px;
+  }
+  
+  /* Header section */
+  .header {
+    background-color: #343a40;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+  }
+  
+  .header h3 {
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .header nav {
+    margin-top: 10px;
+  }
+  
+  .header .nav-link {
+    color: #ffffff;
+    padding: 10px 15px;
+  }
+  
+  .header .nav-link:hover {
+    color: #ced4da;
+  }
+  
+  /* Jumbotron styling */
+  .jumbotron {
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .jumbotron h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .jumbotron h3 {
+    font-size: 1.2rem;
+    color: #6c757d;
+  }
+  
+  /* Table styling */
+  .table-container {
+    margin-top: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table th {
+    background-color: #343a40;
+    color: #fff;
+    padding: 15px;
+    font-weight: 600;
+  }
+  
+  .table td {
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 15px;
+  }
+  
+  /* Table hover effect */
+  .table tbody tr:hover {
+    background-color: #e2e6ea;
+  }
+  
+  /* Button styling */
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Alert styling */
+  .alert {
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .table-container {
+      width: 100%;
+      padding: 0;
+    }
+  
+    .jumbotron h2 {
+      font-size: 1.5rem;
+    }
+    
+    .jumbotron h3 {
+      font-size: 1rem;
+    }
+  }
+  

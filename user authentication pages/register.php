@@ -1,9 +1,9 @@
 <?php
 session_start();
-include("functions.php");                 // functions for DB connection
+//include("functions.php");                 // functions for DB connection
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username'];
+    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
     $password = $_POST['password'];
 
     // check if username exists prior
@@ -19,6 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // insert user into database 
         $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
         if( $stmt->execute(['username' => $username, 'password' => $hashedPassword]) ) {
+            $_SESSION['registration_success'] = "Registration successful! You can now log in below.";
+            
             // redirect to login page after successful registration 
             header("Location: login.php");
             exit();
@@ -52,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <?php if (isset($error)) : ?>
                     <div class="alert alert-danger mt-3"><?= htmlspecialchars($error) ?></div>
                 <?php endif; ?>
-                <p>Already have an account? <a href= "login.html">Login</a></p>
+                <p>Already have an account? <a href= "login.php">Login</a></p>
             </div>    
         </div>
     </body>
