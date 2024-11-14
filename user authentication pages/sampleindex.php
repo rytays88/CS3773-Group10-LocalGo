@@ -41,16 +41,18 @@ include("functions.php");
       <h3 class="text-muted">Software Engineering Group Project</h3>
       <nav>
         <ul class="nav nav-justified">
-          <li class="nav-item"><a class="nav-link" href="results.php">HOME</a></li>
-        
-          <!-- Check if user is logged in -->
-          <?php if (!isset($_SESSION['user_id'])): ?>
-            <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
-            <li class="nav-item"><a class="nav-link" href="register.php">Register</a></li>
-          <?php else: ?> 
-            <li class = "nav-item"><a class ="nav-link" href="logout.php"></a></li>
-          <?php endif; ?>
-        </ul>
+          <li class="nav-item "><a class="nav-link" href="sampleindex.php">HOME</a></li>
+		      <li class="nav-item"><a class="nav-link" href="about.html">ABOUT US</a></li>
+		      <li class="nav-item"><a class="nav-link" href="location.php">Location</a></li>
+
+          <?php if (isset($_SESSION['user_id'])): ?>
+            <!-- Show Logout if user is logged in -->
+            <li class="nav-item"><a class="nav-link" href="logout.php">LOGOUT</a></li>
+          <?php else: ?>
+            <!-- Show Login if user is not logged in -->
+            <li class="nav-item"><a class="nav-link" href="login.php">LOGIN</a></li>
+          <?php endif; ?>   
+            </ul>
       </nav>
     </div>
     <!-- Scrollable Content -->
