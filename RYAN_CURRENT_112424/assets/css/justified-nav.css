@@ -1,0 +1,48 @@
+/* sample justified-nav.css to use with main files */
+
+/* Basic reset for the navigation bar */
+.nav-justified {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-bottom: 1rem;
+    list-style: none;
+    background-color: #f8f9fa; /* Light background color */
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  /* Navigation items */
+  .nav-justified .nav-item {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .nav-justified .nav-link {
+    display: block;
+    padding: 1rem;
+    color: #495057; /* Text color */
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #ffffff;
+    border-right: 1px solid #e9ecef;
+  }
+  
+  .nav-justified .nav-link:hover {
+    background-color: #e2e6ea; /* Hover effect */
+    color: #007bff;
+  }
+  
+  .nav-justified .nav-link:last-child {
+    border-right: none; /* Remove right border on the last link */
+  }
+  
+  /* Responsive behavior for smaller screens */
+  @media (max-width: 768px) {
+    .nav-justified {
+      flex-direction: column;
+    }
+    .nav-justified .nav-item {
+      flex-grow: unset;
+    }
+  }
+  
