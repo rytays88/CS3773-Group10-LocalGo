@@ -1,0 +1,25 @@
+CREATE DATABASE LocalGoDBSchema; 
+
+USE LocalGoDBSchema; 
+
+CREATE TABLE User (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_name VARCHAR(100) NOT NULL UNIQUE,
+    user_password_hash VARCHAR(255) NOT  NULL,
+    user_email VARCHAR(255) NOT NULL UNIQUE, 
+    user_role ENUM('admin', 'user') DEFAULT 'user',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,   -- records when event is added 
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- updates when record is modified 
+);
+
+CREATE TABLE Event (
+    event_id INT AUTO_INCREMENT PRIMARY KEY,
+    event_name VARCHAR(255) NOT NULL,
+    event_date DATE NOT NULL,
+    created_by INT,
+    updated_by INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,   -- records when event is added 
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- updates when record is modified 
+    CONSTRAINT fk_created_by FOREIGN KEY (created_by) REFERENCES User(user_id),
+    CONSTRAINT fk_updated_by FOREIGN KEY (updated_by) REFERENCES User(user_id)
+);
