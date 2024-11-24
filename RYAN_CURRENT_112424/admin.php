@@ -74,7 +74,7 @@ if (!isset($_SESSION['user_id'])) {
     </div>
     <script src="assets/js/add-content.js"></script>
     <script src="assets/js/event-attributes.js"></script>
-    <div id="hl-aria-live-message-contatiner" aria-live="polite" class="visually-hidden"></div>
-    <div id="hl-aria-live-alert-contatiner" role="alert" aria-live="assertive" class="visually-hidden"></div>
+    <div id="hl-aria-live-message-container" aria-live="polite" class="visually-hidden"></div>
+    <div id="hl-aria-live-alert-container" role="alert" aria-live="assertive" class="visually-hidden"></div>
     </body>
 </html>

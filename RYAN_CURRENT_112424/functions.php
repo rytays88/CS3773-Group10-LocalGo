@@ -17,6 +17,34 @@ try {
     error_log("Database Connection Error: " . $e->getMessage());
 }
 
+// function to get all events
+function get_all_events($search = '') {
+    global $pdo;
+    $sql = "SELECT event_id, event_name, event_date FROM Event WHERE event_date > NOW()";
+    
+    if( $search ) {
+        $sql .= " AND event_name LIKE :search";      // add search filter to query
+    }
+
+    $sql .= " ORDER BY event_date ASC";
+    
+    try {
+        $stmt = $pdo->prepare($sql);
+
+        if( $search ) {
+            $stmt->bindValue(':search', '%' . $search . '%', PDO::PARAM_STR);
+        }
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch( PDOException $e ) {
+        error_log("Error fetching events: " . $e->getMessage());
+        return false;
+    }
+
+}
+
 // function to retrieve event by ID
 function get_event_by_id($event_id) {     // think current database uses firstName for eventID? 
     global $pdo;    // global pdo instance 

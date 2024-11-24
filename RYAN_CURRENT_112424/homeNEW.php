@@ -1,10 +1,16 @@
 <?php
 session_start();
 include("functions.php");
+
 if (!isset($_SESSION['user_id'])) {
    header("Location: login.php");
    exit();
 }
+
+// check for search term 
+$search = isset($_GET['search']) ? htmlspecialchars(trim($_GET['search'])) : '';
+$events = get_all_events($search);
+
 ?>
 <!doctype html>
 <html>
@@ -65,6 +71,13 @@ if (!isset($_SESSION['user_id'])) {
       <div class="jumbotron">
         <h2>UPCOMING EVENTS</h2>
       </div>
+
+      <!-- Search form -->
+      <form action="home.php" method="get" class= "form-inline mb-3">
+        <input type="text" name="search" class="form-control" placeholder="Search for an event" value ="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
+        <button type="submit" class="btn btn-primary ml-2">Search</button>
+      </form>
+
       <!-- Table centered with space on each side -->
         <div class="row justify-content-center">
             <div class="col-md-12">
@@ -76,7 +89,23 @@ if (!isset($_SESSION['user_id'])) {
 						              <th style = "text-align: center;">Date</th>						  
 						            </tr>
 					            </thead>
-           				    <tbody id="form_info"> 
+           				    <tbody id="form_info">
+                        <?php if ($events): ?>
+                          <?php foreach ($events as $event): ?>
+                            <tr>
+                              <td><?php echo htmlspecialchars($event['event_name']); ?></td>
+                              <td><?php echo htmlspecialchars($event['event_date']); ?></td>
+                              <td>
+                                <!-- Link to editadmin.php with event_id as query paramater -->
+                                <a href="editadmin.php?event_id=<?php echo $event['event_id']; ?>">Edit Event</a>
+                              </td>
+                            </tr>
+                          <?php endforeach; ?>   
+                        <?php else: ?>
+                          <tr>
+                            <td colspan="3">No upcoming events found.</td>
+                          </tr>
+                        <?php endif; ?>   
                       </tbody>
                     </table>
                 </div>
@@ -85,7 +114,7 @@ if (!isset($_SESSION['user_id'])) {
     </div> <!-- /container-fluid -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="assets/js/add-content.js"></script>
-    <script>
+    <!-- <script>
         function refresh_data() {
             $.ajax({
                 type: 'get',
@@ -96,7 +125,7 @@ if (!isset($_SESSION['user_id'])) {
             });
         }
         setInterval(function() { refresh_data(); }, 500);
-    </script>
+    </script> -->
   </div>  
   <div id="hl-aria-live-message-container" aria-live="polite" class="visually-hidden"></div>
   <div id="hl-aria-live-alert-container" role="alert" aria-live="assertive" class="visually-hidden"></div>
