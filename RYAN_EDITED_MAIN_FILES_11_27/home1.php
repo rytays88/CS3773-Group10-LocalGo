@@ -2,7 +2,7 @@
 session_start();
 include("functions.php");
 
-$search = isset($_GET['search']) ? htmlspecialchars(trim($_GET['search'])) : '';
+//$search = isset($_GET['search']) ? htmlspecialchars(trim($_GET['search'])) : '';
 
 ?>
 <!doctype html>
@@ -38,8 +38,8 @@ $search = isset($_GET['search']) ? htmlspecialchars(trim($_GET['search'])) : '';
       <nav>
         <ul class="nav nav-justified">
           <li class="nav-item active"><a class="nav-link" href="home1.php">UPCOMING EVENTS</a></li>
-		      <li class="nav-item"><a class="nav-link" href="about.html">ABOUT US</a></li>
-		      <li class="nav-item"><a class="nav-link" href="location.html">LOCATION</a></li>
+		      <li class="nav-item"><a class="nav-link" href="about.php">ABOUT US</a></li>
+		      <li class="nav-item"><a class="nav-link" href="location.php">LOCATION</a></li>
 
 		      <?php if (isset($_SESSION['username'])): ?>
             <li class="nav-item"><a class="nav-link" href="logout.php">LOGOUT</a></li>
