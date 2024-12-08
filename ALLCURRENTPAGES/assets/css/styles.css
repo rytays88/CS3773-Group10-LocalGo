@@ -1,0 +1,472 @@
+
+
+
+.jumbotron h3 {
+  margin-top: 20px; /* Adjust this value to move the text lower */
+  margin-bottom: 20px; /* Adjust margin as needed */
+  color: #202124;
+}
+
+.jumbotron h2 {
+  margin-top: 10px; /* Adjust this value to move the text lower */
+  margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.section {
+  padding: 50px;
+  height: 100vh; /* Full viewport height */
+}
+
+.white {
+  text-align: center;
+  background-color: white;
+  color: black;
+}
+
+.black {
+  text-align: center;
+  background-color: #202124;
+  color: white;
+}
+
+.blackblack {
+  background-color: #202124;
+  color: #202124;
+}
+
+
+/* Custom error styles */
+.has-error .help-block,
+.has-error .form-control-feedback,
+.has-error .form-control {
+  color: red;
+}
+
+.has-success .help-block,
+.has-success .form-control-feedback,
+.has-success .form-control {
+  color: green;
+}
+
+.form-container .form-control {
+  width: 100%;
+  max-width: 600px; /* Adjust this value to make the fields wider */
+  margin: 0 auto; /* Center the form fields */
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+
+input[type="text"], input[type="password"], input[type="email"], input[type="phone"], textarea {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 800px; /* Ensure the same width for all input fields */
+  color: black; /* Ensure text inside input fields is black */
+}
+
+
+input[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #240147;
+  color: black !important; /* Ensure text inside submit button is black */
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+.table-striped th {
+  color: black;
+}
+
+/* Handle the collapsed state of the header */
+.header.collapsed {
+  height: 1px; /* Adjust this value as needed */
+  transition: height 0.3s;
+  padding: 5px 0; /* Adjust padding as needed */
+}
+
+.custom-portfolio-btn {
+  background: linear-gradient(to bottom, #240147, #003333);
+  border-color: white;
+  color: white; /* Optional: change text color to make it more readable */
+}
+
+.custom-orange-btn {
+  background: linear-gradient(to bottom, #F87311, #B36405);
+  border-color: orange;
+  color: white; /* Optional: change text color to make it more readable */
+}
+
+.content {
+  background-color: #202124; /* Replace with your desired background color */
+  color: white; /* Set text color to white */
+  /* Add any other styles you want DBDCE0 */ 
+}
+
+.content-white {
+  background-color: #FFFFFF; /* Replace with your desired background color */
+  color: white; /* Set text color to white */
+  /* Add any other styles you want DBDCE0 */ 
+}
+
+.custom-img {
+  width: 469px; /* Adjust width as needed */
+  height: 356px; /* Adjust height as needed */
+}
+
+.custom-imgWide {
+  width: 1450px; /* Adjust width as needed */
+  height: 800px; /* Adjust height as needed */
+}
+
+
+.masthead h3.text-muted {
+    color: #FFFFFF;
+    font-size: 2.5em; /* Adjust this value to your desired font size */
+}
+
+.lead {
+    color: #FFFFFF !important; /* Change text color to purple */
+    font-size: 1em; /* Adjust this value to your desired font size */
+    /* Add any other styles you want */
+}
+
+.nav-justified  {
+  border-color: transparent; /* Replace #desiredColor with your preferred color */
+  border-radius: 0px;
+}
+
+/* Override Bootstrap button colors */
+.nav-justified .nav-item a.nav-link {
+  background-color: transparent !important; /* Deep indigo-purple with transparency */
+  color: #FFFFFF; /* Text color */
+  border-color: transparent; /* Replace #desiredColor with your preferred color */
+  border-radius: 0px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* Hover effect */
+.nav-justified .nav-item a.nav-link:hover {
+  background-color: rgba(50, 25, 150, 0.2) !important; /* Deep indigo-purple with transparency */
+  color: #3275CA; /* Text color on hover */
+  border-color: transparent; /* Border color on hover */
+}
+
+.nav-justified > li > a {
+  background: transparent !important; /* Deep indigo-purple with transparency */
+  border-bottom: transparent;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling on the body */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%; /* Ensure full width */
+    padding: 0; /* Remove default padding */
+}
+
+.header, .footer {
+    flex-shrink: 0;
+    width: 100%; /* Ensure full width */
+}
+
+.content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden; /* Prevent horizontal scrolling in the content */
+    width: 100%; /* Ensure full width */
+	padding-bottom: 100px; /* Adjust the value as needed */
+}
+
+.jumbotron {
+	background-color: #202124;
+    color: #FFFFFF; /* Text color */
+    padding: 2rem; /* Adjust padding if needed */
+    box-sizing: border-box; /* Ensure padding doesn't add to width */
+	margin-bottom: 0px; /* Adjust margin as needed */
+}
+
+.jumbotronblack {
+	background-color: #202124;
+    color: #FFFFFF; /* Text color */
+    padding: 2rem; /* Adjust padding if needed */
+    box-sizing: border-box; /* Ensure padding doesn't add to width */
+	margin-bottom: 0px; /* Adjust margin as needed */
+}
+
+.jumbotronwhitewhite {
+	background-color: #FFFFFF;
+    color: #FFFFFF; /* Text color */
+    padding: 2rem; /* Adjust padding if needed */
+    box-sizing: border-box; /* Ensure padding doesn't add to width */
+	margin-bottom: 0px; /* Adjust margin as needed */
+}
+
+.jumbotronwhite {
+	background-color: #FFFFFF;
+    color: black; /* Text color */
+    padding: 2rem; /* Adjust padding if needed */
+    box-sizing: border-box; /* Ensure padding doesn't add to width */
+	margin-bottom: 0px; /* Adjust margin as needed */
+}
+
+/* Responsive images */
+img.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.header {
+  background: rgba(50, 25, 150, 0.2); /* Deep indigo-purple with transparency */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000; /* Ensure header is above other content */
+  color: white;
+  padding: 10px 0; /* Add some padding if needed */
+  text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 3.5em;
+    letter-spacing: 1px;
+}
+
+
+.menu_background {
+    background-color: #10062A;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+    color: #0090FE;
+}
+
+.menu_background a {
+    color: #0090FE;
+    text-decoration: none;
+    padding: 1px 2px;
+}
+
+.menu_active {
+    background-color: #00FF00;
+}
+
+.menu_item {
+    color: #4C0F4D; /* Default color for all menu items */
+    text-decoration: none;
+}
+
+.menu_item:visited {
+    color: #005454;
+}
+
+.menu_item:hover {
+    color: #FF11F3;
+}
+
+.scrollable-content {
+    flex: 1;
+    overflow-y: auto;
+    background-color: #F2F2F2;
+    padding: 20px;
+}
+
+.row-bg-gray {
+    background-color: #D9D9D9;
+    padding: 10px;
+    text-align: center;
+}
+
+.row-bg-grad {
+  background: transparent; /* Deep indigo-purple with transparency */
+  padding: 0px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.row-bg-lightgray {
+    background-color: #F2F2F2;
+    padding: 10px;
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: rgba(50, 25, 150, 0.2); /* Deep indigo-purple with transparency */
+  border-radius: 0px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  color: white; /* Set text color to white */
+}
+
+.nav-justified {
+  border-color: transparent !important; /* Replace #desiredColor with your preferred color */
+  border-radius: 0px;
+  background-color: transparent !important; /* Make background transparent */
+  margin-bottom: 0; /* Remove any bottom margin */
+}
+
+
+/* Image Slider Styles */
+.slider-container {
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Set max width */
+    margin: 0 auto; /* Center slider */
+    position: relative; /* Position for absolute children */
+    overflow: hidden; /* Hide overflow */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px;
+}
+
+.slider-container img {
+    width: 100%;
+    height: auto;
+    display: block; /* Ensure images are block elements */
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(50, 25, 150, 0.7); /* Semi-transparent background */
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.slider-arrow.left {
+    left: 10px;
+}
+
+.slider-arrow.right {
+    right: 10px;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.slider-dots span {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider-dots span.active {
+    background-color: #240147; /* Active dot color */
+}
+
+
+#slider {
+	width: 100%;
+    height: 650px; /* Set the desired height of the slider */
+    overflow: hidden;
+}
+
+#slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: slider 20s infinite;
+}
+
+#slider figure img {
+    float: left;
+    width: 20%;
+    height: 100%; /* Make the image take up the full height of the slider */
+    object-fit: cover; /* Crop the image to cover the entire container */
+}
+
+@keyframes slider {
+    0% {
+        left: 0%;
+    }
+    20% {
+        left: 0%;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%;
+    }
+}
+
